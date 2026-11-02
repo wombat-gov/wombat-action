@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run WOMBATpass
-        uses: WAF2p/wafpass-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.1.1
         with:
           server_url: https://wombat.example.com
           api_token: ${{ secrets.WOMBAT_TOKEN }}
@@ -47,7 +47,7 @@ jobs:
 
 ```yaml
       - name: Run WOMBATpass
-        uses: WAF2p/wafpass-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.1.1
         with:
           server_url: https://wombat.example.com
           api_key: ${{ secrets.WOMBAT_API_KEY }}
@@ -74,12 +74,12 @@ jobs:
 | `controls_dir`   | no       | —            | Path to local Wombat YAML controls. |
 | `server_controls`| no       | `false`      | Fetch controls from the Wombat server instead. |
 | `fetch_controls` | no       | `false`      | Clone controls from the framework repo before scanning. |
-| `framework_repo` | no       | `WAF2p/fr..` | Repo to fetch controls from when `fetch_controls` is enabled. |
+| `framework_repo` | no       | `wombat-gov/framework` | Repo to fetch controls from when `fetch_controls` is enabled. |
 | `verbose`        | no       | `false`      | Show all results including PASSes. |
 | `plan_file`      | no       | —            | Path to a Terraform plan JSON for change overview. |
 | `upload_source`  | no       | `false`      | Upload source files for dashboard diff previews. |
 | `wombat_version`| no       | —            | `wombat-core` version to install. |
-| `wombat_source` | no       | —            | Override pip source, e.g. `git+https://github.com/WAF2p/pass.git`. |
+| `wombat_source` | no       | —            | Override pip source, e.g. `git+https://github.com/wombat-gov/wombat-core.git`. |
 | `python_version` | no       | `3.12`       | Python version for the runner. |
 
 ## Outputs
@@ -107,19 +107,19 @@ published yet, install from the source repository instead:
 
 ```yaml
       - name: Run WOMBATpass
-        uses: WAF2p/wafpass-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.1.1
         with:
           server_url: ${{ vars.WOMBAT_SERVER_URL }}
           api_key: ${{ secrets.WOMBAT_API_KEY }}
           scan_path: ./infra
-          wombat_source: git+https://github.com/WAF2p/pass.git
+          wombat_source: git+https://github.com/wombat-gov/wombat-core.git
 ```
 
 ## Multi-cloud / monorepo example
 
 ```yaml
       - name: Run WOMBATpass
-        uses: WAF2p/wafpass-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.1.1
         with:
           server_url: ${{ vars.WOMBAT_SERVER_URL }}
           api_key: ${{ secrets.WOMBAT_API_KEY }}
