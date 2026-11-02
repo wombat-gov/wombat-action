@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "wombat-action"
-version = "0.1.1"
+version = "0.2.0"
 description = "WOMBATpass – GitHub Action for running IaC compliance scans and pushing results to a Wombat server"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -38,9 +38,9 @@ dependencies = [
 [project.urls]
 Homepage = "https://www.wombat-gov.dev"
 Documentation = "https://www.wombat-gov.dev/docs/"
-Repository = "https://github.com/WAF2p/wafpass-action"
-"Bug Tracker" = "https://github.com/WAF2p/wafpass-action/issues"
-Community = "https://github.com/WAF2p"
+Repository = "https://github.com/wombat-gov/wombat-action"
+"Bug Tracker" = "https://github.com/wombat-gov/wombat-action/issues"
+Community = "https://github.com/wombat-gov"
 
 [project.optional-dependencies]
 dev = [

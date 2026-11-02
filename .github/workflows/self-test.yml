@@ -38,7 +38,7 @@ jobs:
       - name: Checkout WOMBATpass
         uses: actions/checkout@v4
         with:
-          repository: WAF2p/pass
+          repository: wombat-gov/wombat-core
           path: pass
 
       - name: Checkout Wombat framework controls

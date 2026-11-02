@@ -72,10 +72,10 @@ inputs:
     required: false
     default: 'false'
   wombat_version:
-    description: 'Version of wombat-core to install (e.g. 1.0.0). Leave empty for latest.'
+    description: 'Version of wombat-core to install (e.g. 1.2.0). Leave empty for latest.'
     required: false
   wombat_source:
-    description: 'Override pip install source, e.g. git+https://github.com/WAF2p/pass.git. Takes precedence over wombat_version.'
+    description: 'Override pip install source, e.g. git+https://github.com/wombat-gov/wombat-core.git. Takes precedence over wombat_version.'
     required: false
   wafpass_version:
     description: 'Deprecated alias for wombat_version. Use wombat_version instead.'

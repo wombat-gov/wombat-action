@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run WOMBATpass
-        uses: wombat-gov/wombat-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.2.0
         with:
           server_url: https://wombat.example.com
           api_token: ${{ secrets.WOMBAT_TOKEN }}
@@ -47,7 +47,7 @@ jobs:
 
 ```yaml
       - name: Run WOMBATpass
-        uses: wombat-gov/wombat-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.2.0
         with:
           server_url: https://wombat.example.com
           api_key: ${{ secrets.WOMBAT_API_KEY }}
@@ -107,7 +107,7 @@ published yet, install from the source repository instead:
 
 ```yaml
       - name: Run WOMBATpass
-        uses: wombat-gov/wombat-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.2.0
         with:
           server_url: ${{ vars.WOMBAT_SERVER_URL }}
           api_key: ${{ secrets.WOMBAT_API_KEY }}
@@ -119,7 +119,7 @@ published yet, install from the source repository instead:
 
 ```yaml
       - name: Run WOMBATpass
-        uses: wombat-gov/wombat-action@v0.1.1
+        uses: wombat-gov/wombat-action@v0.2.0
         with:
           server_url: ${{ vars.WOMBAT_SERVER_URL }}
           api_key: ${{ secrets.WOMBAT_API_KEY }}
