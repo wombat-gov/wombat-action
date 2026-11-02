@@ -5,6 +5,12 @@ on:
     branches: [main]
   pull_request:
 
+# Least privilege: both jobs only read repositories (this action plus the
+# wombat-core and framework checkouts) to lint and run a mock-server smoke
+# test. CodeQL `actions/missing-workflow-permissions` (#1, #2).
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -35,13 +41,13 @@ jobs:
         with:
           path: action
 
-      - name: Checkout WAF++ PASS
+      - name: Checkout WOMBATpass
         uses: actions/checkout@v4
         with:
-          repository: WAF2p/pass
+          repository: wombat-gov/wombat-core
           path: pass
 
-      - name: Checkout WAF++ framework controls
+      - name: Checkout Wombat framework controls
         uses: actions/checkout@v4
         with:
           repository: WAF2p/framework
@@ -53,7 +59,7 @@ jobs:
           cp framework/modules/controls/controls/*.yml pass/controls/ || true
           ls -la pass/controls/ | head -5
 
-      - name: Start mock WAF++ server
+      - name: Start mock Wombat server
         run: |
           cat > /tmp/mock_server.py <<'PY'
           import json, uuid
