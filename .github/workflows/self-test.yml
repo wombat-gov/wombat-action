@@ -5,6 +5,12 @@ on:
     branches: [main]
   pull_request:
 
+# Least privilege: both jobs only read repositories (this action plus the
+# wombat-core and framework checkouts) to lint and run a mock-server smoke
+# test. CodeQL `actions/missing-workflow-permissions` (#1, #2).
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
